@@ -24,6 +24,7 @@ export const site = {
     twitter: "@dogbro",
     github: "https://github.com/totalch/dogbro27",
   },
+  },
   /** ブログ一覧の1ページあたり記事数 */
   postsPerPage: 6,
 };

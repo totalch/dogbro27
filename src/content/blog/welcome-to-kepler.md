@@ -30,4 +30,4 @@ The whole site is driven by a small set of design tokens — two hues (navy and 
 
 We work with e-commerce brands, SaaS founders, venture capitalists, and agencies who need AI solutions that scale without exploding costs.
 
-Questions? Contact us at **sales@dogbro.site**.
+Questions? Contact us at **sales@dogbro.store**.
