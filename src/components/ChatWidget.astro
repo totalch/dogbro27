@@ -3,8 +3,7 @@
 // Usage: import ChatWidget from '../components/ChatWidget.astro'
 //        place <ChatWidget /> at the bottom of your <body>
 
-const WORKER_URL = import.meta.env.PUBLIC_WORKER_URL || ""
-const CHAT_DISABLED = !WORKER_URL
+const WORKER_URL = import.meta.env.PUBLIC_WORKER_URL
 ---
 ---
 
@@ -246,12 +245,7 @@ const CHAT_DISABLED = !WORKER_URL
   }
 </style>
 
-<script define:vars={{ WORKER_URL, CHAT_DISABLED }}>
-  if (CHAT_DISABLED) {
-    // Gracefully exit if no CHAT_API endpoint is configured
-    document.currentScript?.parentElement?.remove?.()
-  }
-
+<script define:vars={{ WORKER_URL }}>
   const panel     = document.getElementById('chat-panel')
   const toggle    = document.getElementById('chat-toggle')
   const iconOpen  = document.getElementById('icon-open')
