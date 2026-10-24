@@ -14,9 +14,8 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
-  },
-  // ChatWidget backend — replace with your Workers endpoint before deployment
-  env: {
-    PUBLIC_WORKER_URL: "https://chat.dogbro.site",
+    define: {
+      'process.env.PUBLIC_WORKER_URL': JSON.stringify("https://chat.dogbro.store"),
+    },
   },
 });
