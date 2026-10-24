@@ -1,0 +1,21 @@
+---
+// Dogbro logo — mark + word "Dogbro"
+interface Props {
+	size?: "md" | "sm";
+	href?: string;
+}
+const { size = "md", href = "/" } = Astro.props;
+const mark = size === "md" ? "h-[30px]" : "h-[24px]";
+const text = size === "md" ? "text-[22px]" : "text-xl";
+---
+
+<a
+	href={href}
+	class:list={[
+		"flex items-center gap-2.5 font-display font-bold tracking-[-0.02em] text-cloud",
+		text,
+	]}
+>
+	<img src="/logo.svg" alt="Dogbro" class={mark} width={size === "md" ? 30 : 24} height={size === "md" ? 30 : 24} />
+	Dogbro
+</a>

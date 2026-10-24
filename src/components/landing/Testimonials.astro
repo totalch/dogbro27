@@ -1,0 +1,74 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+
+const quotes = [
+	{
+		quote:
+			"Our support costs dropped by 80% after deploying Dogbro's AI agents. The pay-per-query model scales perfectly with our growth.",
+		initials: "JD",
+		avatar: "bg-navy",
+		name: "Jessica Day",
+		role: "Head of Customer Success, TechFlow",
+		tilt: "-rotate-[1.2deg]",
+	},
+	{
+		quote:
+			"Dogbro's data scraping pipeline delivered competitor insights that would have cost us $10k/month with a traditional agency.",
+		initials: "AS",
+		avatar: "bg-orange",
+		name: "Alex Rodriguez",
+		role: "Co-founder, MarketSnap",
+		tilt: "rotate-1",
+	},
+	{
+		quote:
+			"We generated our first 100 blog posts in a day with Dogbro's content engine. Zero copyright issues, and it sounds on-brand.",
+		initials: "MP",
+		avatar: "bg-navy-deep",
+		name: "Maria Petersen",
+		role: "Content Director, Lumen",
+		tilt: "-rotate-1",
+	},
+];
+---
+
+<section class="relative overflow-hidden bg-linear-160 from-navy to-navy-deep text-cloud">
+	<span class="absolute top-12.5 left-[6%] text-[28px] text-orange">✦</span>
+	<span class="absolute right-[7%] bottom-10 size-5 rotate-[18deg] rounded-md bg-orange"></span>
+	<div class="mx-auto max-w-[1200px] px-8 py-20">
+		<SectionHeader
+			eyebrow="What Our Clients Say"
+			title="Businesses that scale with Dogbro"
+			on="navy"
+			class="max-w-[620px] mb-12"
+		/>
+		<div class="grid gap-6 md:grid-cols-3">
+			{
+				quotes.map((q) => (
+					<div
+						class:list={[
+							"rounded-card border-2 border-ink bg-cloud p-7 shadow-pop transition-[transform,box-shadow] duration-180 hover:rotate-0 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-pop-lg",
+							q.tilt,
+						]}
+					>
+						<p class="text-base leading-[1.55] text-slate-800">{q.quote}</p>
+						<div class="mt-5.5 flex items-center gap-3">
+							<span
+								class:list={[
+									"flex size-[42px] items-center justify-center rounded-full font-bold text-cloud",
+									q.avatar,
+								]}
+							>
+								{q.initials}
+							</span>
+							<div>
+								<div class="text-[15px] font-bold text-ink">{q.name}</div>
+								<div class="text-[13px] text-slate-500">{q.role}</div>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

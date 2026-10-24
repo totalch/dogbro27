@@ -1,0 +1,86 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+
+const items = [
+	{
+		q: "Is the generated content truly copyright-free?",
+		a: "Yes. We train our models exclusively on copyright-free public domain data (Wikipedia, Common Crawl, public domain literature). The content generated belongs entirely to you, with zero intellectual property risk.",
+	},
+	{
+		q: "Can we rebrand Dogbro's tools as our own?",
+		a: "Yes. We offer full White-Label licensing across our entire workflow suite. You can package our data scraping pipelines, content generation tools, or support bots, apply your own branding, and deploy them directly to your clients.",
+	},
+	{
+		q: "How much can I save compared to GPT-4 APIs?",
+		a: "By hosting our own fine-tuned open-source models (like Llama 3 or Mistral), your inference costs drop by up to 80% compared to GPT-4. Since we use public domain training data, there are no expensive closed-API fees either.",
+	},
+	{
+		q: "What makes your support bots cost only $0.002 per query?",
+		a: "We use an internal knowledge base (vector database) paired with a lightweight open-source LLM. The computing cost per query is fractions of a cent, while you charge $0.50 to $1.00 per resolution — resulting in 90%+ gross margins.",
+	},
+	{
+		q: "What kind of data do you scrape for the DaaS service?",
+		a: "We strictly scrape publicly accessible data — e-commerce prices, public financial records, competitor product catalogs, and social trends — while fully respecting robots.txt files and data privacy regulations. We never extract private or personally identifiable information.",
+	},
+	{
+		q: "How long does it take to get a prototype ready?",
+		a: "Our AI generates editable Figma or FigJam links from your product concepts in hours, not weeks. You can immediately present to stakeholders, pitch investors, or iterate on the design.",
+	},
+];
+---
+
+<section
+	id="faq"
+	class="border-y-4 border-ink bg-linear-160 from-orange-bright from-0% via-orange from-60% to-orange-deep"
+>
+	<div class="mx-auto max-w-[820px] px-8 py-20">
+		<SectionHeader eyebrow="FAQ" title="Questions, answered" on="orange" class="mb-11" />
+		<div id="faq-list" class="flex flex-col gap-3.5">
+			{
+				items.map((item, i) => (
+					<div class="overflow-hidden rounded-2xl border-2 border-ink bg-cloud shadow-[5px_5px_0_var(--color-ink)]">
+						<button
+							type="button"
+							data-faq-toggle
+							aria-expanded={i === 0 ? "true" : "false"}
+							class="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-[22px] text-left font-display text-lg font-semibold text-ink"
+						>
+							{item.q}
+							<span
+								data-faq-icon
+								class:list={[
+									"text-2xl font-bold text-orange transition-transform duration-200",
+									i === 0 && "rotate-45",
+								]}
+							>
+								+
+							</span>
+						</button>
+						<p data-faq-answer hidden={i !== 0} class="px-6 pb-6 text-base leading-relaxed text-slate-600">
+							{item.a}
+						</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	// アコーディオン: 一度に1つだけ開く
+	const list = document.getElementById("faq-list");
+	const toggles = list?.querySelectorAll("button[data-faq-toggle]") ?? [];
+
+	toggles.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const wasOpen = btn.getAttribute("aria-expanded") === "true";
+			toggles.forEach((other) => {
+				const open = other === btn && !wasOpen;
+				other.setAttribute("aria-expanded", String(open));
+				other.querySelector("[data-faq-icon]")?.classList.toggle("rotate-45", open);
+				const answer = other.parentElement?.querySelector("[data-faq-answer]");
+				if (answer) answer.hidden = !open;
+			});
+		});
+	});
+</script>

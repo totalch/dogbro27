@@ -1,0 +1,95 @@
+---
+import SectionHeader from "./SectionHeader.astro";
+
+// Dogbro LLC Service Features
+const features = [
+	{
+		title: "AI Content Generation",
+		body: "Copyright-free content powered by public domain data. Zero IP risk, 80% lower costs.",
+		chip: "bg-orange-soft",
+		icon: "diamond",
+	},
+	{
+		title: "Data Scraping & Insights",
+		body: "Raw data turned into actionable dashboards. 80-90% margins on structured intelligence.",
+		chip: "bg-sky",
+		icon: "ring",
+	},
+	{
+		title: "Support Bots",
+		body: "Pay-per-query AI agents. 90%+ gross margins per resolution.",
+		chip: "bg-orange-soft",
+		icon: "circle",
+	},
+	{
+		title: "UI/UX Prototyping",
+		body: "From concept to editable Figma link in hours, not weeks.",
+		chip: "bg-sky",
+		icon: "triangle",
+	},
+	{
+		title: "White-Label Licensing",
+		body: "Embed our toolkit under your brand. Recurring B2B with zero support overhead.",
+		chip: "bg-orange-soft",
+		icon: "sparkle",
+	},
+	{
+		title: "Custom AI Solutions",
+		body: "End-to-end automation pipelines tailored to your business needs.",
+		chip: "bg-sky",
+		icon: "pill",
+	},
+];
+---
+
+<section
+	id="services"
+	class="border-y-4 border-ink bg-linear-160 from-orange-bright from-0% via-orange from-55% to-orange-deep"
+>
+	<div class="mx-auto max-w-[1200px] px-8 pt-18 pb-21">
+		<SectionHeader
+			eyebrow="Services"
+			title="Four Pillars of AI Excellence"
+			sub="Zero copyright risk. Up to 90% profit margins. White-label ready."
+			on="orange"
+		/>
+		<div class="grid gap-6 md:grid-cols-3">
+			{
+				features.map((f, i) => (
+					<div
+						class:list={[
+							"rounded-card border-2 border-ink bg-cloud p-7 shadow-pop transition-[transform,box-shadow] duration-180 hover:translate-y-[-4px] hover:rotate-0 hover:shadow-pop-lg",
+							i % 2 === 0 ? "-rotate-1" : "rotate-1",
+						]}
+					>
+						<span
+							class:list={[
+								"mb-4.5 flex size-13 items-center justify-center rounded-chip",
+								f.chip,
+							]}
+						>
+							{f.icon === "triangle" && (
+								<span class="size-0 border-x-11 border-b-[18px] border-x-transparent border-b-orange" />
+							)}
+							{f.icon === "circle" && <span class="size-5 rounded-full bg-navy" />}
+							{f.icon === "diamond" && (
+								<span class="size-5 rotate-45 rounded-[3px] bg-orange" />
+							)}
+							{f.icon === "ring" && (
+								<span class="size-[22px] rounded-full border-4 border-navy" />
+							)}
+							{f.icon === "sparkle" && (
+								<span class="text-[26px] leading-none text-orange">✦</span>
+							)}
+							{f.icon === "pill" && (
+								<span class="h-3.5 w-[22px] rounded-md border-[3px] border-navy" />
+							)}
+						</span>
+						<h3 class="text-[21px] font-semibold text-ink">{f.title}</h3>
+						<p class="mt-2 text-[15px] leading-normal text-slate-600">{f.body}</p>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>

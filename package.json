@@ -1,0 +1,55 @@
+{
+  "name": "dogbro",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Dogbro LLC — AI-Driven Solutions for Business Growth",
+  "license": "MIT",
+  "author": "Dogbro LLC",
+  "homepage": "https://dogbro.site",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dogbro/dogbro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dogbro/dogbro/issues"
+  },
+  "keywords": [
+    "astro",
+    "astro-theme",
+    "astro-component",
+    "withastro",
+    "theme",
+    "blog",
+    "portfolio",
+    "landing-page",
+    "tailwindcss",
+    "typescript",
+    "mdx",
+    "starter",
+    "template",
+    "ai",
+    "saas",
+    "automation"
+  ],
+  "packageManager": "pnpm@9.14.4",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.1",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
+  }
+}
