@@ -12,7 +12,7 @@ export const site = {
   description:
     "We build tailored AI and automation solutions that help businesses scale operations, cut overhead, and uncover market opportunities.",
   /** 本番 URL */
-  url: "https://dogbro.site",
+  url: "https://dogbro.store",
   /** コンテンツ言語 */
   locale: "en",
   /** デフォルト著者 */
@@ -22,7 +22,7 @@ export const site = {
   /** SNS ハンドル */
   social: {
     twitter: "@dogbro",
-    github: "https://github.com/dogbro",
+    github: "https://github.com/totalch/dogbro27",
   },
   /** ブログ一覧の1ページあたり記事数 */
   postsPerPage: 6,

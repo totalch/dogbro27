@@ -23,8 +23,7 @@ operations, cut overhead, and uncover market opportunities.
 
 ## Contact
 
-- **Email:** [sales@dogbro.site](mailto:sales@dogbro.site)
-- **GitHub:** [@dogbro](https://github.com/dogbro)
+- **Email:** [sales@dogbro.store](mailto:sales@dogbro.store)
 
 ---
 
